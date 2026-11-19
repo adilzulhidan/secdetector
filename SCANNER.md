@@ -27,6 +27,12 @@
 
 Jalankan Laravel dan Vite seperti biasa (`php artisan serve` dan `npm run dev`). Dashboard meminta URL serta konfirmasi izin. Prototype hanya mengizinkan target lokal/lab privat, mengambil satu halaman dengan GET tanpa payload, dan memeriksa beberapa header respons. Ia belum menjalankan uji SQLi, XSS, IDOR, atau CSRF.
 
+Hasil pemeriksaan yang berhasil disimpan di penyimpanan lokal browser yang sama, maksimal 30 hasil. Riwayat tidak disinkronkan ke server atau browser/perangkat lain.
+
+Setiap hasil scan yang tersimpan dapat dibuka sebagai laporan dan dicetak/disimpan ke PDF atau diunduh sebagai JSON. Laporan merangkum metode, observasi, hasil model, dan batasan. Gunakan sebagai artefak eksperimen atau lampiran; laporan satu target bukan artikel jurnal atau bukti evaluasi statistik.
+
+Ekspor DOCX membutuhkan ekstensi ZIP PHP. Jika tidak aktif, gunakan opsi cetak/simpan PDF di halaman laporan.
+
 Model membandingkan nilai parameter URL dengan contoh dukungan kelas. URL tanpa query parameter tidak mendapat penilaian AI. Skor pasangan bukan probabilitas kerentanan dan kandidat perlu diverifikasi manual. Tidak ada temuan bukan bukti sistem aman atau jaminan tidak ada miss.
 
 ## Evaluasi pelatihan saat ini

@@ -101,7 +101,7 @@ def _validate_local_target(raw_url: str) -> str:
         raise HTTPException(422, "Masukkan URL HTTP/HTTPS yang valid tanpa nama pengguna atau kata sandi.")
     host = parsed.hostname.rstrip(".").lower()
     local_names = {"localhost", "127.0.0.1", "::1"}
-    if host not in local_names and not host.endswith((".localhost", ".test")):
+    if host not in local_names:
         try:
             addresses = {ipaddress.ip_address(item[4][0]) for item in socket.getaddrinfo(host, None)}
         except (OSError, ValueError):
