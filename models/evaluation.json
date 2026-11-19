@@ -1,0 +1,45 @@
+{
+  "dataset": "Morzeux/HttpParamsDataset payload_train.csv + payload_test.csv",
+  "seed": 17,
+  "pair_training_examples": 4000,
+  "epochs_completed": 8,
+  "held_out_one_shot_evaluation": {
+    "held_out_class": "xss",
+    "query_count": 6611,
+    "selected_epochs_from_validation": 8,
+    "best_validation_loss": 0.02343304455280304,
+    "threshold": 0.5,
+    "results_by_support_count": {
+      "1": {
+        "support_examples_per_class": 1,
+        "confusion_matrix_binary": {
+          "TP": 11,
+          "FN": 166,
+          "FP": 13,
+          "TN": 6421
+        },
+        "precision": 0.4583333333333333,
+        "recall_tpr": 0.062146892655367235,
+        "fnr": 0.9378531073446328,
+        "fpr": 0.002020516008703761,
+        "accuracy": 0.9729239146876418
+      },
+      "5": {
+        "support_examples_per_class": 5,
+        "confusion_matrix_binary": {
+          "TP": 0,
+          "FN": 177,
+          "FP": 0,
+          "TN": 6434
+        },
+        "precision": 0.0,
+        "recall_tpr": 0.0,
+        "fnr": 1.0,
+        "fpr": 0.0,
+        "accuracy": 0.9732264407805173
+      }
+    },
+    "note": "XSS was excluded from pair training. One-shot and five-shot support results use the independent supplied test split. This measures parameter-text matching, not target vulnerability confirmation."
+  },
+  "warning": "This pilot must not be interpreted as confirmed web-vulnerability detection or zero-day assurance."
+}

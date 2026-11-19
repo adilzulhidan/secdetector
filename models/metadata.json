@@ -1,0 +1,39 @@
+{
+  "model": "character-level Siamese text-pair model",
+  "weights_file": "siamese_pair_model.weights.h5",
+  "comparison": "shared Bidirectional GRU encoder + absolute embedding difference + learned sigmoid pair score",
+  "labels": [
+    "cmdi",
+    "norm",
+    "path-traversal",
+    "sqli",
+    "xss"
+  ],
+  "support_examples": {
+    "cmdi": "a);/usr/bin/id",
+    "norm": "0390750196070955",
+    "path-traversal": "/.../.../.../.../.../.../.../.../{file}",
+    "sqli": "1'+(select 'supo' where 8691=8691;select count(*) from rdb$fields as t1,rdb$types as t2,rdb$collations as t3,rdb$functions as t4)+'",
+    "xss": ">\"<link rel=\"stylesheet\" href=\"javascript:document.cookie=true;\">"
+  },
+  "max_seq_length": 256,
+  "vocabulary_size": 71,
+  "training_examples": 20712,
+  "training_label_counts": {
+    "norm": 12870,
+    "sqli": 7235,
+    "xss": 355,
+    "cmdi": 59,
+    "path-traversal": 193
+  },
+  "test_examples": 10355,
+  "test_label_counts": {
+    "norm": 6434,
+    "sqli": 3617,
+    "xss": 177,
+    "cmdi": 30,
+    "path-traversal": 97
+  },
+  "threshold": 0.5,
+  "corpus_warning": "HTTP parameter values from a public corpus; not full traffic or vulnerability outcomes. IDOR/CSRF are absent. Score is not a probability of vulnerability."
+}
